@@ -1,0 +1,28 @@
+// Teste de Monitor
+// Monitor tem exclusao mutua, entao o escalonador nao pode chamar o outro metodo
+// Signal tem que ser o ultimo comando do monitor
+// O Monitor e por completo uma secao critica
+// O comando sleep() nao desbloquei a secao critica, o wait() alem de dormir desbloquei a secao
+// para o outro metodo pode entrar na secao critica
+
+monitor teste {
+
+metodo produtor {
+	
+	signal(var);
+
+}
+
+metodo consumidor {
+
+	wait(var);
+	
+}
+
+// Funcao de Monitores em C
+pthread_cond_init
+pthread_cond_destroy
+pthread_cond_wait
+pthread_cond_signal
+
+pthread_cond_broadcast
